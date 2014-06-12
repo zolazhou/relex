@@ -1,6 +1,6 @@
 defmodule Mix.Tasks.Relex do
   def release do
-    project = Mix.project
+    project = Mix.Project.config
     guess = Module.concat([Mix.Project.get, Release])
     release = project[:release] || guess
     unless Code.ensure_loaded?(release) do
